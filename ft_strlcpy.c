@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:00:49 by matavare          #+#    #+#             */
-/*   Updated: 2022/10/31 16:20:36 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:07:40 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	ls = ft_strlen(src);
-	if (size < ls)
-		return (ls);
-	else
+	if (size > 0)
 	{
-		while (src[i])
+		while (src[i] && i < size - 1)
 		{
 			dst[i] = src[i];
 			i++;
 		}
 		dst[i] = '\0';
 	}
-	return (i);
+	return (ls);
 }
