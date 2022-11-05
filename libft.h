@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:02:01 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/02 17:28:28 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/04 20:00:44 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strchr(const char *s, int c); /*done*/
 char	*ft_strrchr(const char *s, int c); /*done*/
 char	*ft_strdup(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n); /*done*/
-int		ft_memcmp(const void *str1, const void *str2, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memset(void *s, int c, size_t n);
