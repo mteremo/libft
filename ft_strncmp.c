@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 18:55:37 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/07 11:22:54 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/07 16:06:55 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		if (str1[i] != str2[i])
 			return (str1[i] - str2[i]);
-		else
-			i++;
+		i++;
 	}
 	i--;
 	return (str1[i] - str2[i]);

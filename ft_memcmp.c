@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:03:40 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/07 11:03:56 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/07 15:44:18 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (st1[i] != st2[i])
 			return (st1[i] - st2[i]);
-		else
-			i++;
+		i++;
 	}
 	i--;
 	return (st1[i] - st2[i]);
