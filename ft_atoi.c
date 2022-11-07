@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 19:37:39 by matavare          #+#    #+#             */
-/*   Updated: 2022/10/31 17:00:04 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/07 14:12:08 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	signal;
-	int	v;
+	size_t	i;
+	size_t	signal;
+	size_t	v;
 
 	i = 0;
 	signal = 1;
