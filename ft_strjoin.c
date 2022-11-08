@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:08:41 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/08 16:06:09 by matavare         ###   ########.fr       */
+/*   Created: 2022/11/08 16:09:44 by matavare          #+#    #+#             */
+/*   Updated: 2022/11/08 16:39:49 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*sub;
-	size_t			i;
+	char			*new;
+	unsigned int	len_new;
+	unsigned int	i;
+	unsigned int	f;
 
-	if (start > ft_strlen(s))
-		return (ft_calloc(1, 1));
-	if (len + start > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	sub = (char *)malloc(sizeof(char) * (len + 1));
-	if (!sub)
+	len_new = ft_strlen(s1) + ft_strlen(s2);
+	new = (char *)malloc(sizeof(char) * (len_new + 1));
+	f = 0;
+	if (!new)
 		return (NULL);
-	i = 0;
-	while (i < len)
+	if (s1 || s2)
 	{
-		sub[i] = s[start];
-		i++;
-		start++;
+		ft_memcpy(new, s1, ft_strlen(s1));
+		i = ft_strlen(s1);
+		while ((char)s2[f])
+		{
+			new[i] = (char)s2[f];
+			i++;
+			f++;
+		}
+		new[i] = '\0';
 	}
-	sub[i] = '\0';
-	return (sub);
+	return (new);
 }
