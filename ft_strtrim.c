@@ -6,42 +6,42 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 16:43:07 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/08 17:07:20 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/09 11:59:57 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h"	
+
+int	ft_isset(char const *set, int s1)
+{
+	size_t	f;
+
+	f = 0;
+	while (set[f])
+	{
+		if (set[f] == s1)
+			return (1);
+		else
+			f++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned int	len;
-	unsigned int	i;
-	unsigned int	f;
-	unsigned int	n;
-	char			*new;
+	size_t	i;
+	size_t	f;
+	char	*new;
 
-	len = ft_strlen(s1) - (2 * ft_strlen(set));
-	new = (char *)malloc(sizeof(char) * len);
+	i = 0;
+	f = ft_strlen(s1) - 1;
+	while (s1[i] && ft_isset(set, s1[i]) == 1)
+		i++;
+	while (s1[f] && ft_isset(set, s1[f]) == 1 && f > i)
+		f--;
+	new = (char *)malloc(sizeof(char) * (f - i + 2));
 	if (!new)
 		return (NULL);
-	if 
-	i = 0;
-	f = 0;
-	n = 0;
-	while (s1[i])
-	{
-		while (set[f])
-			if (s1[i] != set[f])
-		{
-			new[n] = s1[i];
-			n++;
-			i++;
-		}
-		else
-		{
-			i++;
-			f++;
-		}
-	}
+	ft_strlcpy(new, s1 + i, f - i + 2);
 	return (new);
 }
