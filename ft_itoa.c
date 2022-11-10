@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:44:02 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/09 18:08:15 by matavare         ###   ########.fr       */
+/*   Updated: 2022/11/10 10:31:03 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,45 @@
 
 size_t	countint(int n)
 {
-	int	l;
+	int	i;
 
-	l = 0;
+	i = 0;
 	if (n == 0)
 		return (1);
 	if (n < 0)
-		l += 1;
+		i = 1;
 	while (n != 0)
 	{
 		n /= 10;
-		l++;
+		i++;
 	}
-	return (l);
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	size_t		len;
-	long int	ln;
 	char		*str;
+	int			f;
+	long int	ln;
 
-	len = countint(n);
+	f = countint(n);
 	ln = n;
-	str = malloc(len + 1);
+	str = (char *)malloc(sizeof(char) * (f + 1));
 	if (!str)
 		return (NULL);
+	str[f] = '\0';
 	if (ln == 0)
 		str[0] = '0';
-	str[len] = '\0';
 	if (ln < 0)
 	{
 		str[0] = '-';
-		ln = -ln;
+		ln *= -1;
 	}
 	while (ln > 0)
 	{
-		str[len - 1] = ln % 10 + '0';
-		ln = ln / 10;
-		len--;
+		str[f - 1] = ln % 10 + '0';
+		ln /= 10;
+		f--;
 	}
 	return (str);
 }
