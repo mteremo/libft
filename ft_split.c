@@ -5,91 +5,87 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:12:12 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/10 16:45:35 by matavare         ###   ########.fr       */
+/*   Created: 2022/11/14 10:00:14 by matavare          #+#    #+#             */
+/*   Updated: 2022/11/14 14:38:37 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**countwd(char const *s, char c)
+char	**wdcount(char const *s, char c)
 {
-	int		i;
 	int		counter;
+	int		i;
 	char	**str;
 
-	i = 0;
 	counter = 0;
+	i = 0;
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
 		if (s[i] != c && s[i] != '\0')
-		{
 			counter++;
-			while (s[i] != c && s[i])
-				i++;
-		}
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
-	printf("counter: %d\n", counter);
-	str = (char **)malloc(sizeof(char *) * (counter + 1));
-	if (!str)
-		return (NULL);
-	str[counter] = 0;
+	str = (char **)ft_calloc((counter + 1), sizeof(char *));
 	return (str);
 }
 
-int	wdlen(char const *s, int i, char c)
+char	*wdlenalloc(char const *s, char c, int wdi)
 {
-	int		end;
+	int		start;
+	int		len;
+	char	*str;
 
-	end = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			break ;
-		i++;
-		end++;
-	}
-	printf("nb: %d", end);
-	return (end);
+	len = 0;
+	start = wdi;
+	while (s[wdi] != c && s[wdi] != '\0')
+		wdi++;
+	len = wdi - start;
+	str = (char *)ft_calloc((len + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s + start, len);
+	return (str);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
+	int		wdi;
 	int		i;
-	int		nb;
 
+	str = wdcount(s, c);
+	if (!str)
+		return (NULL);
+	wdi = 0;
 	i = 0;
-	nb = 0;
-	str = countwd(s, c);
 	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		str[nb] = (char *)ft_calloc((wdlen(s, i, c) + 1), sizeof(char));
-		if (!str[nb])
-			return (NULL);
-		ft_memmove(str[nb], s + i, wdlen(s, i, c));
-		nb++;
-		i++;
+		if (s[i] != c && s[i] != '\0')
+			str[wdi] = wdlenalloc(s, c, i);
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		wdi++;
 	}
 	return (str);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	//int		word;
-	//char	**array;
+	char	**array;
+	int		word;
+	char	*s = "      split       this for   me  !       ";
 
-	wdlen("this is my string a", 5, ' ');
-	//countwd("this is my string a", ' ');
-	/* array = ft_split(" OLa teresa ..olola  b", ' ');
+	array = ft_split(s, ' ');
 	word = 0;
-	while (word <= 4)
+	while (word <= 5)
 	{
 		printf("[%d]: %s\n", word, array[word]);
 		word++;
-	} */
-}
+	}
+} */
