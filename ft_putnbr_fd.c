@@ -6,11 +6,12 @@
 /*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:22:46 by matavare          #+#    #+#             */
-/*   Updated: 2022/12/08 14:07:30 by matavare         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:48:21 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -23,9 +24,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ln = -ln;
 	}
 	if (ln > 9)
-	{
 		ft_putnbr_fd(ln / 10, fd);
-	}
 	ln = ln % 10 + '0';
 	write(fd, &ln, 1);
 }

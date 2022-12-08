@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 17:40:35 by matavare          #+#    #+#             */
-/*   Updated: 2022/12/08 14:06:30 by matavare         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:39:59 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	return (c >= 32 && c <= 126);
 }

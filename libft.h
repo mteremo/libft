@@ -6,7 +6,7 @@
 /*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:02:01 by matavare          #+#    #+#             */
-/*   Updated: 2022/12/08 14:08:29 by matavare         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:51:43 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_list
 {
