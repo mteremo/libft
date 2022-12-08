@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 10:00:14 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/14 14:38:37 by matavare         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:46:31 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (str);
 }
-
-/* int	main(void)
-{
-	char	**array;
-	int		word;
-	char	*s = "      split       this for   me  !       ";
-
-	array = ft_split(s, ' ');
-	word = 0;
-	while (word <= 5)
-	{
-		printf("[%d]: %s\n", word, array[word]);
-		word++;
-	}
-} */

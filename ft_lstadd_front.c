@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: matavare <matavare@student.42.fr>          +#+  +:+       +#+        */
+/*   By: matavare <matavare@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:43:29 by matavare          #+#    #+#             */
-/*   Updated: 2022/11/14 16:12:30 by matavare         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:06:45 by matavare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
